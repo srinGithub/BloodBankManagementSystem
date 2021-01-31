@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Donor Status Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.header {
+	padding: 80px;
+	text-align: center;
+	background-image:
+		url("images/file70kc18dlox411gg69752-1188005359-1560449918.jpg");
+	background-size: 100% 100%;
+	color: white;
+}
+
+.header h1 {
+	font-size: 40px;
+}
+
+.left {
+	flex: 80%;
+	background-color: #f1f1f1;
+	padding: 20px;
+	float: left;
+}
+
+.right {
+	flex: 20%;
+	background-color: white;
+	padding: 20px;
+	float: center
+}
+
+.login {
+	width: 200px;
+	height: 121px;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1>Welcome</h1>
+		<p>Blood Bank</p>
+	</div>
+	<center>
+		<h3>LOGIN</h3>
+	</center>
+	<div class="col-md-4">
+		<form:form action="/BloodBankManagementSystem_SpringMVC/cDQ"
+			method="post" commandName="checkDonorloginForm"
+			novalidate="novalidate">
+
+			<div class="form-group">
+				<label for="checkRequestloginForm">Enter User Name</label>
+				<form:input path="username" class="form-control"
+					id="checkDonorloginForm" placeholder="User Name" />
+			</div>
+
+			<div>
+				<font color="red"><form:errors path="username" /></font>
+			</div>
+
+			<div class="form-group">
+				<label for="checkDonorloginForm">Password</label>
+				<form:password path="password" class="form-control"
+					id="checkDonorloginForm" placeholder="password" />
+			</div>
+
+			<div>
+				<font color="red"><form:errors path="password" /></font>
+			</div>
+
+			<button id="button" class="btn btn-primary" type="submit">Login</button>
+
+		</form:form>
+	</div>
+	<div class="right">
+		<img src="images/form-wizard-login.jpg" class="login" />
+	</div>
+</body>
+</html>
